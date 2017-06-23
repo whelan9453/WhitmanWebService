@@ -16,7 +16,7 @@ let getUserInfo = async function (req, res, next) {
         let user = await UserModel.fetchUser(req, res, email, token);
     } catch (error) {
         console.error(new Date(), 'UserController.getUserInfo failed', JSON.stringify(error));
-        res.status(500);
+        if (!res.status) res.status(500);
         return res.send(error instanceof WhitmanError ? error : 'Failed to fetch user information.');
     }
     res.send(user);
@@ -34,12 +34,12 @@ let createUser = async function (req, res, next) {
         await UserModel.createUser(req, res, email, displayName, token);
     } catch (error) {
         console.error(new Date(), 'UserController.createUser failed', JSON.stringify(error));
-        res.status(500);
+        if (!res.status) res.status(500);
         return res.send(error instanceof WhitmanError ? error : 'Failed to create a new user.');
     }
-    res.send(token);
+    res.send({ 'token': token });
 }
 module.exports = {
-	getUserInfo: getUserInfo,
+    getUserInfo: getUserInfo,
     createUser: createUser
 };
