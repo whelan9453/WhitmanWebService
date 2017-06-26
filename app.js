@@ -2,8 +2,8 @@ let express = require('express');
 let morgan = require('morgan');
 let bodyParser = require('body-parser');
 let WhitmanError = require('./exception/WhitmanError');
-let mount = process.env.PARSE_MOUNT || '/1';
-let REST_KEY = process.env.REST_KEY || '1317f83b74067b835f3f8a2e86da0bd2d2006196efa77b7f0511096e68a9b0e7';
+let mount = process.env.PARSE_MOUNT;
+let REST_KEY = process.env.REST_KEY;
 
 let app = express();
 app.use(morgan('tiny'));

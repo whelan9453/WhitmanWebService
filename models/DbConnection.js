@@ -1,6 +1,6 @@
 let WhitmanError = require('../exception/WhitmanError');
 let MongoClient = require('mongodb').MongoClient;
-let mongoUri = process.env.DATABASE_URI || 'mongodb://whitman:IPIgBMtY2VZlRynNxTmirxM4uMEz7d3tvDRzSpIyRpW9ZQj6ShPpbt1aHX1Tg96GW9LkDUkM2oad6vxnZCnjJA==@whitman.documents.azure.com:10255/whitman?ssl=true';
+let mongoUri = process.env.DATABASE_URI;
 let db;
 
 let getDbConn = async function (req, res) {
