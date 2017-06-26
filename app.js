@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/versionInfo', function (req, res) {
-  res.status(200).send('20170623 Support user insert & query.');
+  res.status(200).send('20170626 Support user update.');
 });
 //Check rest key
 app.use((req, res, next) => {
