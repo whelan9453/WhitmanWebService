@@ -61,7 +61,7 @@ let updateUser = async function (req, res, next) {
     let user = await checkTokenAndParameter(req, res, token, email, context);
     context = Object.assign({}, user.context, context);
     await UserModel.updateUser(req, res, email, context);
-    res.send('ok');
+    res.send({ 'result': 'ok' });
 }
 
 module.exports = {
