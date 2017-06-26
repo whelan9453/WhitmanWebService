@@ -59,7 +59,7 @@ let createUser = async function (req, res, next) {
 let updateUser = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email, context = req.body.context;
     let user = await checkTokenAndParameter(req, res, token, email, context);
-    Object.assign(context, user.context);
+    context = Object.assign({}, user.context, context);
     await UserModel.updateUser(req, res, email, context);
     res.send('ok');
 }
