@@ -71,7 +71,7 @@ let createUser = async function (req, res, userEmail, displayName, sessionToken)
  * @param {string} email 
  * @param {object} context 
  */
-let updateUser = async function (req, res, email, context) {
+let updateUserCtx = async function (req, res, email, context) {
     let result;
     try {
         let db = await DbConn.getDbConn(req, res);
@@ -85,8 +85,29 @@ let updateUser = async function (req, res, email, context) {
     console.log(new Date(), 'UserModel.updateUser succeeded.', JSON.stringify(result));
 }
 
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {string} email 
+ */
+let purgeUserCtx = async function (req, res, email) {
+    let result;
+    try {
+        let db = await DbConn.getDbConn(req, res);
+        result = await db.collection(COLL_NAME).updateOne({ email: email }, { $set: { context: {} } });
+    } catch (error) {
+        console.error(new Date(), 'UserModel.purgeUserCtx error', JSON.stringify(error));
+        DbConn.flushDbPool();
+        res.status(500);
+        throw new WhitmanError(WhitmanError.DB_OPERATION_FAILED, 'Purge failed.');
+    }
+    console.log(new Date(), 'UserModel.purgeUserCtx succeeded.', JSON.stringify(result));
+}
+
 module.exports = {
     fetchUser: fetchUser,
     createUser: createUser,
-    updateUser: updateUser
+    updateUserCtx: updateUserCtx,
+    purgeUserCtx: purgeUserCtx
 };

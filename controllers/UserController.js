@@ -56,16 +56,24 @@ let createUser = async function (req, res, next) {
     res.send({ 'token': token });
 }
 
-let updateUser = async function (req, res, next) {
+let updateUserCtx = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email, context = req.body.context;
     let user = await checkTokenAndParameter(req, res, token, email, context);
     context = Object.assign({}, user.context, context);
-    await UserModel.updateUser(req, res, email, context);
+    await UserModel.updateUserCtx(req, res, email, context);
+    res.send({ 'result': 'ok' });
+}
+
+let purgeUserCtx = async function (req, res, next) {
+    let token = req.headers['x-whitman-session-token'], email = req.body.email;
+    let user = await checkTokenAndParameter(req, res, token, email, 'NOCONTEXT');
+    await UserModel.purgeUserCtx(req, res, email);
     res.send({ 'result': 'ok' });
 }
 
 module.exports = {
     getUserInfo: getUserInfo,
     createUser: createUser,
-    updateUser: updateUser
+    updateUserCtx: updateUserCtx,
+    purgeUserCtx: purgeUserCtx
 };

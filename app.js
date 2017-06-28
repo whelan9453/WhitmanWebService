@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/versionInfo', function (req, res) {
-  res.status(200).send('20170627 Support fetching of upload token.');
+  res.status(200).send('20170628 Support purging user context.');
 });
 //Check rest key
 app.use((req, res, next) => {
