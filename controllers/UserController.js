@@ -39,7 +39,7 @@ let getUserInfo = async function (req, res, next) {
 }
 
 let createUser = async function (req, res, next) {
-    let email = req.body.email, displayName = req.body.displayName, validation = email + displayName + 'whitman2017', token;
+    let email = req.body.email, displayName = req.body.displayName, validation = email + 'whitman2017', token;
     if (!email || !displayName) {
         res.status(400);
         return res.send(new WhitmanError(WhitmanError.INVALID_PARAMETERS, 'Empty email or displayName.'))

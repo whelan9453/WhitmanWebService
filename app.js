@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/versionInfo', function (req, res) {
-  res.status(200).send('20170628 Support purging user context.');
+  res.status(200).send('20170628 Redesign token dependency.');
 });
 //Check rest key
 app.use((req, res, next) => {
