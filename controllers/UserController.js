@@ -2,7 +2,7 @@ let WhitmanError = require('../exception/WhitmanError');
 let UserModel = require('../models/UserModel');
 let crypto = require('crypto');
 
-let checkTokenAndParameter = async function (req, res, token, email, context) {
+let checkToken = async function (req, res, token, email) {
     if (!token) {
         res.status(401);
         return res.send(new WhitmanError(WhitmanError.INVALID_SESSION_TOKEN, 'Empty session token'));
@@ -10,10 +10,6 @@ let checkTokenAndParameter = async function (req, res, token, email, context) {
     if (!email) {
         res.status(400);
         return res.send(new WhitmanError(WhitmanError.INVALID_PARAMETERS, 'Empty email.'));
-    }
-    if (!context) {
-        res.status(400);
-        return res.send(new WhitmanError(WhitmanError.INVALID_PARAMETERS, 'Empty context.'));
     }
     let user;
     try {
@@ -33,7 +29,7 @@ let checkTokenAndParameter = async function (req, res, token, email, context) {
 
 let getUserInfo = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email;
-    let user = await checkTokenAndParameter(req, res, token, email, 'NOCONTEXT');
+    let user = await checkToken(req, res, token, email);
     delete user.sessionToken;
     res.send(user);
 }
@@ -58,15 +54,30 @@ let createUser = async function (req, res, next) {
 
 let updateUserCtx = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email, context = req.body.context;
-    let user = await checkTokenAndParameter(req, res, token, email, context);
+    if (!context) {
+        res.status(400);
+        return res.send(new WhitmanError(WhitmanError.INVALID_PARAMETERS, 'Empty context.'));
+    }
+    let user = await checkToken(req, res, token, email);
     context = Object.assign({}, user.context, context);
     await UserModel.updateUserCtx(req, res, email, context);
     res.send({ 'result': 'ok' });
 }
 
+let updateUserName = async function (req, res, next) {
+    let token = req.headers['x-whitman-session-token'], email = req.body.email, displayName = req.body.displayName;
+    if (!displayName) {
+        res.status(400);
+        return res.send(new WhitmanError(WhitmanError.INVALID_PARAMETERS, 'Empty displayName.'));
+    }
+    let user = await checkToken(req, res, token, email);
+    await UserModel.updateUserName(req, res, email, displayName);
+    res.send({ 'result': 'ok' });
+}
+
 let purgeUserCtx = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email;
-    let user = await checkTokenAndParameter(req, res, token, email, 'NOCONTEXT');
+    let user = await checkToken(req, res, token, email);
     await UserModel.purgeUserCtx(req, res, email);
     res.send({ 'result': 'ok' });
 }
@@ -75,5 +86,6 @@ module.exports = {
     getUserInfo: getUserInfo,
     createUser: createUser,
     updateUserCtx: updateUserCtx,
+    updateUserName: updateUserName,
     purgeUserCtx: purgeUserCtx
 };

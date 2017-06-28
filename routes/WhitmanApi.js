@@ -5,7 +5,8 @@ let SecretController = require('../controllers/SecretController');
 
 router.post('/createUser', UserController.createUser);
 router.post('/getUserInfo', UserController.getUserInfo);
-router.post('/updateUser', UserController.updateUserCtx);
+router.post('/updateUserCtx', UserController.updateUserCtx);
+router.post('/updateUserName', UserController.updateUserName);
 router.post('/purgeUser', UserController.purgeUserCtx);
 router.post('/getUploadToken', SecretController.getUpdateToken);
 module.exports = router;

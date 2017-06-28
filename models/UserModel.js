@@ -77,12 +77,33 @@ let updateUserCtx = async function (req, res, email, context) {
         let db = await DbConn.getDbConn(req, res);
         result = await db.collection(COLL_NAME).updateOne({ email: email }, { $set: { context: context } });
     } catch (error) {
-        console.error(new Date(), 'UserModel.updateUser error', JSON.stringify(error));
+        console.error(new Date(), 'UserModel.updateUserCtx error', JSON.stringify(error));
         DbConn.flushDbPool();
         res.status(500);
         throw new WhitmanError(WhitmanError.DB_OPERATION_FAILED, 'Update failed.');
     }
-    console.log(new Date(), 'UserModel.updateUser succeeded.', JSON.stringify(result));
+    console.log(new Date(), 'UserModel.updateUserCtx succeeded.', JSON.stringify(result));
+}
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {string} email 
+ * @param {string} displayName 
+ */
+let updateUserName = async function (req, res, email, displayName) {
+    let result;
+    try {
+        let db = await DbConn.getDbConn(req, res);
+        result = await db.collection(COLL_NAME).updateOne({ email: email }, { $set: { displayName: displayName } });
+    } catch (error) {
+        console.error(new Date(), 'UserModel.updateUserName error', JSON.stringify(error));
+        DbConn.flushDbPool();
+        res.status(500);
+        throw new WhitmanError(WhitmanError.DB_OPERATION_FAILED, 'Update failed.');
+    }
+    console.log(new Date(), 'UserModel.updateUserName succeeded.', JSON.stringify(result));
 }
 
 /**
@@ -109,5 +130,6 @@ module.exports = {
     fetchUser: fetchUser,
     createUser: createUser,
     updateUserCtx: updateUserCtx,
+    updateUserName: updateUserName,
     purgeUserCtx: purgeUserCtx
 };
