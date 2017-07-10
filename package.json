@@ -10,7 +10,8 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "morgan": "~1.8.1",
-    "mongodb": "~2.2.26"
+    "mongodb": "~2.2.26",
+    "pug": "~2.0.0-rc.2"
   },
   "engines": {
     "node": ">=8"

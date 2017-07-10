@@ -73,4 +73,20 @@ WhitmanError.INVALID_PARAMETERS = 1051;
  */
 WhitmanError.INVALID_SESSION_TOKEN = 1052;
 
+/**
+ * Error code indicating that user context is empty.
+ * @property EMPTY_CONTEXT
+ * @static
+ * @final
+ */
+WhitmanError.EMPTY_CONTEXT = 1053;
+
+/**
+ * Error code indicating that newspaper rendering is failed.
+ * @property RENDER_PAPER_FAILED
+ * @static
+ * @final
+ */
+WhitmanError.RENDER_PAPER_FAILED = 1054;
+
 module.exports = WhitmanError;

@@ -83,6 +83,7 @@ let purgeUserCtx = async function (req, res, next) {
 }
 
 module.exports = {
+    checkToken: checkToken,
     getUserInfo: getUserInfo,
     createUser: createUser,
     updateUserCtx: updateUserCtx,

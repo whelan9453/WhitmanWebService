@@ -1,0 +1,296 @@
+
+@font-face {
+  font-family:Franklin-Gothic-Medium;
+  src:url(/fonts/Franklin-Gothic-Medium.ttf);
+}
+
+.container {
+    /*max-width: 800px;*/
+    /*height: 100vh;*/
+    /*height: 2000px;*/
+    width: 1275px;
+    height: 1650px;
+    margin:0;
+    /*border: 1px solid red;*/
+    position: absolute;
+    
+}
+body{
+    margin: 0;
+    background-color:#FFFFFF; 
+}
+
+/*PHOTO*/
+
+
+.Dumbo_Enquirer_Template{
+    z-index: 1;
+    left: 0px;
+    width: 1275px;
+    height: 1650px;
+    position: absolute;
+}
+
+.n1_q2{
+    z-index: 0;
+    left: 651px;
+    top: 998px;
+    width: 266px;
+    height: 243px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.n2_q2{
+    z-index: 0;
+    left: 941px;
+    top: 998px;
+    width: 266px;
+    height: 243px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.w1i_q4_pp{
+    z-index: 0;
+    left: 68px;
+    top: 633px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.w2i_q5_pp{
+    z-index: 0;
+    left: 359px;
+    top: 482px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.w3i_q5_pp{
+    z-index: 0;
+    left: 650px;
+    top: 631px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.f_q4_pp{
+    z-index: 0;
+    left: 359px;
+    top: 959px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+.w3h_q3{
+    z-index: 0;
+    left: 68px;
+    top: 1185px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.n3_q2{
+    z-index: 0;
+    left: 651px;
+    top: 1257px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+.n4_q2{
+    z-index: 0;
+    left: 940px;
+    top: 1257px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
+    
+}
+
+
+/*TEXT*/
+
+
+.headline_1{
+    z-index: 2;
+    width: 1080.7px;
+    height: 68.7px;
+    /*font-family: FranklinGothic-Demi;*/
+    font-family: 'Roboto', sans-serif;
+    font-size: 72px;
+    font-style: oblique;
+    letter-spacing: -1.4px;
+    
+    color: #FFFFFF;
+    margin: 0;
+    top: 285px;
+    left: 88px;
+    position: absolute;
+}
+
+.headline_2{
+    z-index: 2;
+    width: 325.7px;
+    height: 92px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.15;
+    letter-spacing: -1.4px;
+    
+    margin: 0;
+    color: #FFFFFF;
+    top: 80px;
+    left: 864px;
+    position: absolute;
+}
+
+.byline_1{
+    z-index: 2;
+
+    width: 280.8px;
+    height: 21px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    font-style: oblique;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    
+    margin: 0;
+    color: #FFFFFF;
+    left: 87px;
+    top: 391px;
+    position: absolute;
+}
+
+.w1i_q4_w1h_q3{
+    z-index: 2;
+
+    width: 253.1px;
+    height: 240px;
+    font-family:'Fjalla One', sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    color: #000000;
+    
+    margin: 0;
+    left: 947px;
+    top: 447px;
+    position: absolute;
+}
+
+.w2i_q4_w2h_q3{
+    z-index: 2;
+
+    width: 242.7px;
+    height: 216px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: -0.1px;
+    color: #000000;
+    
+    margin: 0;
+    left: 947px;
+    top: 746px;
+    position: absolute;
+}
+
+.h4_q3{
+    z-index: 2;
+
+    width: 259px;
+    height: 168px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: -0.1px;
+    color: #000000;
+    
+    margin: 0;
+    left: 75px;
+    top: 1047px;
+    position: absolute;
+}
+
+.w3i_q4{
+    z-index: 2;
+
+    width: 166.1px;
+    height: 46px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: oblique;
+    font-stretch: normal;
+    line-height: 1.28;
+    letter-spacing: -0.4px;
+    text-align: right;
+    color: #ffffff;
+    
+    margin: 0;
+    left: 170px;
+    top: 1366px;
+    position: absolute;
+}
+
+.f_q4{
+    z-index: 2;
+
+    width: 259px;
+    height: 168px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.14;
+    letter-spacing: -0.1px;
+    color: #000000;
+    
+    margin: 0;
+    left: 367px;
+    top: 1245px;
+    position: absolute;
+}
+
+
+
+
+

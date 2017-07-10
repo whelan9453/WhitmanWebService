@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/versionInfo', function (req, res) {
-  res.status(200).send('20170628 Support editing of user display name.');
+  res.status(200).send('20170710 Support newspaper rendering.');
 });
 //Check rest key
 app.use((req, res, next) => {
