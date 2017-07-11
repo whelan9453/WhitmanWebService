@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/static', express.static('public'));
 app.get('/versionInfo', function (req, res) {
-  res.status(200).send('20170710 Support newspaper rendering.');
+  res.status(200).send('20170711 Support PDF generation.');
 });
 //Check rest key
 app.use((req, res, next) => {
