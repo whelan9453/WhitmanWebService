@@ -9,7 +9,7 @@ let app = express();
 app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use('/static', express.static('public'));
 app.get('/versionInfo', function (req, res) {
   res.status(200).send('20170710 Support newspaper rendering.');
 });

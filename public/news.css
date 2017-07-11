@@ -22,22 +22,19 @@ body{
 
 /*PHOTO*/
 
+img {
+    position:absolute;
+    top:0;
+    bottom:0;
+    margin: auto;
+    width:100%;
+}
 
 .Dumbo_Enquirer_Template{
     z-index: 1;
     left: 0px;
     width: 1275px;
     height: 1650px;
-    position: absolute;
-}
-
-.test {
-    z-index: 0;
-    left: 68px;
-    top: 633px;
-    width: 265.5px;
-    height: 354.6px;
-    object-fit: contain;
     position: absolute;
 }
 
@@ -64,8 +61,13 @@ body{
 }
 
 .w1i_q4_pp{
-   
-    
+    z-index: 0;
+    left: 68px;
+    top: 633px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
 }
 
 .w2i_q5_pp{
@@ -116,7 +118,7 @@ body{
     left: 651px;
     top: 1257px;
     width: 265.5px;
-    /*height: 354.6px;*/
+    height: 354.6px;
     object-fit: contain;
     position: absolute;
     
@@ -127,7 +129,7 @@ body{
     left: 940px;
     top: 1257px;
     width: 265.5px;
-    /*height: 354.6px;*/
+    height: 354.6px;
     object-fit: contain;
     position: absolute;
     

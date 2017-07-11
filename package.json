@@ -9,8 +9,9 @@
     "body-parser": "~1.17.1",
     "debug": "~2.6.3",
     "express": "~4.15.2",
-    "morgan": "~1.8.1",
+    "html-pdf": "2.1.0",
     "mongodb": "~2.2.26",
+    "morgan": "~1.8.1",
     "pug": "~2.0.0-rc.2"
   },
   "engines": {

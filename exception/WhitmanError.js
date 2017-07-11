@@ -89,4 +89,20 @@ WhitmanError.EMPTY_CONTEXT = 1053;
  */
 WhitmanError.RENDER_PAPER_FAILED = 1054;
 
+/**
+ * Error code indicating that writing html file is failed.
+ * @property OUTPUT_HTML_FAILED
+ * @static
+ * @final
+ */
+WhitmanError.OUTPUT_HTML_FAILED = 1055;
+
+/**
+ * Error code indicating that writing pdf file is failed.
+ * @property OUTPUT_PDF_FAILED
+ * @static
+ * @final
+ */
+WhitmanError.OUTPUT_PDF_FAILED = 1056;
+
 module.exports = WhitmanError;
