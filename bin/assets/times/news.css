@@ -1,0 +1,290 @@
+
+
+@font-face {
+  font-family:ImperialBT-Roman;;/*指定下面路徑的字體名稱*/
+  src:url('fonts/Bitstream - Imperial BT Roman.ttf');
+  /*關於不同瀏覽器字體不同的問題
+  通常會需要額外做修正，但現代瀏覽器基本可以通吃
+  所以chrome跟safari不同的問題通常是語法問題
+  路徑加上雙引號就好了 因為safari無法自動辨識路徑*/
+}
+@font-face {
+  font-family:Cheltenham-NYT-Bold;/*指定下面路徑的字體名稱*/
+  src:url('fonts/Cheltenham-NYT-Bold.ttf');
+}
+
+}
+
+
+.container {
+    /*max-width: 800px;*/
+    /*height: 100vh;*/
+    /*height: 2000px;*/
+    width: 1270px;
+    height: 2100px;
+    margin:0;
+    /*border: 1px solid red;*/
+    position: absolute;
+    
+}
+body{
+    margin: 0;
+    background-color:#FF0000; 
+}
+
+/*PHOTO*/
+
+
+.dumbo-times-template-bg{
+    z-index: 0;
+    left: 0px;
+    width: 1270px;
+    height: 2100px;
+    position: absolute;
+}
+.w1i_q4_w2i_q5_w3i_q5{
+    z-index: 1;
+    left: 656.5px;
+    top: 253.3px;
+    width: 543.5px;
+    height: 496.5px;
+    position: absolute;
+}
+.f_q4_pp{
+    z-index: 1;
+    left: 947px;
+    top: 1025px;
+    width: 254px;
+    height: 199px;
+    position: absolute;
+}
+.n3_q2{
+    z-index: 1;
+    left: 655px;
+    top: 1763px;
+    width: 254px;
+    height: 152px;
+    position: absolute;
+}
+.n4_q2{
+    z-index: 1;
+    left: 946px;
+    top: 1763px;
+    width: 254px;
+    height: 152px;
+    position: absolute;
+}
+
+.w3h_q3{
+    z-index: 1;
+    left: 366px;
+    top: 1025px;
+    width: 543px;
+    height: 350px;
+    position: absolute;
+}
+
+
+
+/*TEXT*/
+
+
+.headline_1{
+    z-index: 1;
+    width: 543.5px;
+    height: 64px;
+    font-family: Cheltenham-NYT-Bold;
+    font-size: 53px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1.5px;
+    color: #000000;
+
+    margin: 0;
+    left: 75px;
+    top: 240px;
+    position: absolute;
+}
+
+.headline_2{
+    z-index: 1;
+    width: 219.5px;
+    height: 128px;
+    font-family: Cheltenham-NYT;
+    font-size: 53px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1.5px;
+    color: #000000;
+
+    margin: 0;
+    left: 76px;
+    top: 1011px;
+    position: absolute;
+}
+
+.byline_1{
+    z-index: 1;
+    width: 232.4px;
+    height: 26px;
+    font-family: ImperialBT-Roman;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    color: #000000;
+
+
+    margin: 0;
+    left: 237px;
+    top: 325px;
+    position: absolute;
+}
+
+.byline_2{
+    z-index: 1;
+    width: 232.4px;
+    height: 26px;
+    font-family: ImperialBT-Roman;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.8px;
+    color: #000000;
+
+
+    margin: 0;
+    left: 90px;
+    top: 1161px;
+    position: absolute;
+}
+
+.h4_q3{
+    z-index: 1;
+    width: 268.2px;
+    height: 110px;
+   font-family: ImperialBT-Roman;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 22.0px;
+    letter-spacing: -0.2px;
+    color: #000000;
+
+
+    margin: 0;
+    left: 366px;
+    top: 371px;
+    position: absolute;
+}
+
+.h1i_q4_h1h_q3{
+    z-index: 1;
+    width: 268.2px;
+    height: 484px;
+    font-family: ImperialBT-Roman;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 23.0px;
+    letter-spacing: -0.2px;
+    color: #000000;
+
+    margin: 0;
+    left: 366px;
+    top: 480px;
+    position: absolute;
+}
+
+
+
+.w2i_q4_w2h_q3{
+    z-index: 1;
+    width: 269px;
+    height: 84px;
+    font-family: ImperialBT-Roman;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 21.0px;
+    letter-spacing: -0.1px;
+    color: #000000;
+
+    margin: 0;
+    left: 947px;
+    top: 810px;
+    position: absolute;
+}
+
+.w3i_q4{
+    z-index: 1;
+    width: 506px;
+    height: 50px;
+    font-family: Cheltenham-NYT-Roman;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 25.0px;
+    letter-spacing: -0.4px;
+
+    margin: 0;
+    left: 365px;
+    top: 1389px;
+    position: absolute;
+}
+
+
+.n1_q2{
+    z-index: 1;
+    width: 232.4px;
+    height: 42px;
+    font-family: ImperialBT-Roman;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 21.0px;
+    letter-spacing: -0.2px;
+    color: #000000;
+
+    margin: 0;
+    left: 366px;
+    top: 1940px;
+    position: absolute;
+}
+
+.f_q4{
+    z-index: 1;
+    width: 251.4px;
+    height: 440px;
+    font-family: ImperialBT-Roman;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 20.0px;
+    letter-spacing: normal;
+    color: #000000;
+
+    margin: 0;
+    left: 947px;
+    top: 1272px;
+    position: absolute;
+}
+
+
+
+
+

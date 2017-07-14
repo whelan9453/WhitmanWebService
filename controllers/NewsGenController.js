@@ -21,9 +21,11 @@ let createPdfPromise = function (html, options, email) {
     });
 }
 
-let transHtmlToPdf = async function (path, resourcePath, email) {
+let transHtmlToPdf = async function (path, resourcePath, email, type) {
     let html = fs.readFileSync(path, 'utf8');
-    let options = { base: '../bin/assets/enquirer', height: "1650px", width: "1275px", border: "0" };
+    let paperH = type === 'enquirer' ? '1650px' : '2100px';
+    let paperW = type === 'enquirer' ? '1275px' : '1270px';
+    let options = { base: `../bin/assets/${type}`, height: paperH, width: paperW, border: "0" };
     try {
         await createPdfPromise(html, options, email);
     } catch (error) {
@@ -45,13 +47,17 @@ let writeFilePromise = function (filename, data) {
     });
 }
 
+const PAPER_TYPE = ['enquirer', 'times'];
 let genPaper = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email;
     let user = await UserController.checkToken(req, res, token, email);
+    let type = req.body.type;
+    if (!type || PAPER_TYPE.indexOf(type) === -1) {
+        return res.status(400).send(new WhitmanError(WhitmanError.INVALID_PAPER_TYPE, `Invalid paper type ${type}.`));
+    }
     let context = user.context;
     if (!context) {
-        res.status(400);
-        return res.send(new WhitmanError(WhitmanError.EMPTY_CONTEXT, 'Empty user context.'));
+        return res.status(400).send(new WhitmanError(WhitmanError.EMPTY_CONTEXT, 'Empty user context.'));
     }
     // console.log(new Date(), 'context', context);
     let paper;
@@ -67,11 +73,11 @@ let genPaper = async function (req, res, next) {
         return res.send(new WhitmanError(WhitmanError.RENDER_PAPER_FAILED, 'Rendering failed.'));
     }
     try {
-        let filename = isWin ? path.join('assets', 'enquirer', `${email}.html`) : path.join('bin', 'assets', 'enquirer', `${email}.html`);
-        let resourcePath = isWin ? path.join('assets', 'enquirer') : path.join('bin', 'assets', 'enquirer');
+        let filename = isWin ? path.join('assets', type, `${email}.html`) : path.join('bin', 'assets', type, `${email}.html`);
+        let resourcePath = isWin ? path.join('assets', type) : path.join('bin', 'assets', type);
         console.log('resourcePath', resourcePath);
         await writeFilePromise(filename, paper);
-        await transHtmlToPdf(filename, resourcePath, email);
+        await transHtmlToPdf(filename, resourcePath, email, type);
     } catch (error) {
         console.error(new Date(), 'NewsGenController.genPaper failed (html + pdf)', error);
         let retErr = error instanceof WhitmanError ? error : new WhitmanError(WhitmanError.RENDER_PAPER_FAILED, 'Writing html failed.');

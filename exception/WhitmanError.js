@@ -105,4 +105,12 @@ WhitmanError.OUTPUT_HTML_FAILED = 1055;
  */
 WhitmanError.OUTPUT_PDF_FAILED = 1056;
 
+/**
+ * Error code indicating that paper type is invalid.
+ * @property INVALID_PAPER_TYPE
+ * @static
+ * @final
+ */
+WhitmanError.INVALID_PAPER_TYPE = 1057;
+
 module.exports = WhitmanError;
