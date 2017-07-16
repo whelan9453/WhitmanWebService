@@ -12,7 +12,8 @@
     "html-pdf": "2.1.0",
     "mongodb": "~2.2.26",
     "morgan": "~1.8.1",
-    "pug": "~2.0.0-rc.2"
+    "pug": "~2.0.0-rc.2",
+    "nodemailer": "~4.0.1"
   },
   "engines": {
     "node": ">=8"
