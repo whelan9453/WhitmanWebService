@@ -2,7 +2,7 @@
 
 @font-face {
   font-family:ImperialBT-Roman;;/*指定下面路徑的字體名稱*/
-  src:url('fonts/Bitstream - Imperial BT Roman.ttf');
+  src:url('http://localhost:9453/static/Bitstream-ImperialBTRoman.ttf');
   /*關於不同瀏覽器字體不同的問題
   通常會需要額外做修正，但現代瀏覽器基本可以通吃
   所以chrome跟safari不同的問題通常是語法問題
@@ -10,7 +10,7 @@
 }
 @font-face {
   font-family:Cheltenham-NYT-Bold;/*指定下面路徑的字體名稱*/
-  src:url('fonts/Cheltenham-NYT-Bold.ttf');
+  src:url('http://localhost:9453/static/Cheltenham-NYT-Bold.ttf');
 }
 
 

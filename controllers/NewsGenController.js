@@ -5,6 +5,35 @@ const path = require('path');
 
 let fs = require('fs');
 let pdf = require('html-pdf');
+let nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'lostintimegroup@gmail.com',
+        pass: 'lostintime4321'
+    }
+});
+
+function sendMail(receiver, path) {
+    let mailOptions = {
+        from: 'lostintimegroup@gmail.com',
+        to: receiver,
+        subject: 'Sending Email using Node.js',
+        text: 'That was easy!',
+        attachments: [{   // file on disk as an attachment
+            filename: 'newspaper.pdf',
+            path: path // stream this file
+        }]
+    };
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+}
 
 let createPdfPromise = function (html, options, email) {
     return new Promise(function (resolve, reject) {
@@ -15,6 +44,7 @@ let createPdfPromise = function (html, options, email) {
             }
             else {
                 console.log('res', res);
+                sendMail(email, `${email}.pdf`);
                 resolve(res);
             }
         });
@@ -64,7 +94,7 @@ let genPaper = async function (req, res, next) {
     let isWin = /^win/.test(process.platform);
     console.log('isWin', isWin);
     try {
-        let filePath = isWin ? path.join('assets', 'enquirer', 'enquirer.pug') : path.join('bin', 'assets', 'enquirer', 'enquirer.pug');
+        let filePath = isWin ? path.join('assets', type, `${type}.pug`) : path.join('bin', 'assets', type, `${type}.pug`);
         console.log('filePath', filePath);
         paper = pug.renderFile(filePath, context);
     } catch (error) {
