@@ -15,12 +15,15 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-function sendMail(receiver, path) {
+function sendMail(receiver, path, name) {
     let mailOptions = {
         from: 'lostintimegroup@gmail.com',
         to: receiver,
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!',
+        subject: 'Your lost in time story',
+        text: `Hi ${name}! Here's your published story. 
+        You may have a real career in journalism ahead of you!
+        
+        Thanks for playing Lost in Time, and we hope you enjoyed it!`,
         attachments: [{   // file on disk as an attachment
             filename: 'newspaper.pdf',
             path: path // stream this file
@@ -36,7 +39,7 @@ function sendMail(receiver, path) {
     });
 }
 
-let createPdfPromise = function (html, options, email) {
+let createPdfPromise = function (html, options, email, name) {
     return new Promise(function (resolve, reject) {
         pdf.create(html, options).toFile(`${email}.pdf`, function (err, res) {
             if (err) {
@@ -45,20 +48,20 @@ let createPdfPromise = function (html, options, email) {
             }
             else {
                 console.log('res', res);
-                sendMail(email, `${email}.pdf`);
+                sendMail(email, `${email}.pdf`, name);
                 resolve(res);
             }
         });
     });
 }
 
-let transHtmlToPdf = async function (path, resourcePath, email, type) {
+let transHtmlToPdf = async function (path, resourcePath, email, type, name) {
     let html = fs.readFileSync(path, 'utf8');
     let paperH = type === 'enquirer' ? '1650px' : '2100px';
     let paperW = type === 'enquirer' ? '1275px' : '1270px';
     let options = { base: `../bin/assets/${type}`, height: paperH, width: paperW, border: "0" };
     try {
-        await createPdfPromise(html, options, email);
+        await createPdfPromise(html, options, email, name);
     } catch (error) {
         throw new WhitmanError(WhitmanError.OUTPUT_PDF_FAILED, 'Creating pdf failed.');
     }
@@ -82,7 +85,7 @@ const PAPER_TYPE = ['enquirer', 'times'];
 let genPaper = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email;
     let user = await UserController.checkToken(req, res, token, email);
-    let type = req.body.type;
+    let type = req.body.type, name = req.body.name || 'sir';
     if (!type || PAPER_TYPE.indexOf(type) === -1) {
         return res.status(400).send(new WhitmanError(WhitmanError.INVALID_PAPER_TYPE, `Invalid paper type ${type}.`));
     }
@@ -108,7 +111,7 @@ let genPaper = async function (req, res, next) {
         let resourcePath = isWin ? path.join('assets', type) : path.join('bin', 'assets', type);
         console.log('resourcePath', resourcePath);
         await writeFilePromise(filename, paper);
-        await transHtmlToPdf(filename, resourcePath, email, type);
+        await transHtmlToPdf(filename, resourcePath, email, type, name);
     } catch (error) {
         console.error(new Date(), 'NewsGenController.genPaper failed (html + pdf)', error);
         let retErr = error instanceof WhitmanError ? error : new WhitmanError(WhitmanError.RENDER_PAPER_FAILED, 'Writing html failed.');
