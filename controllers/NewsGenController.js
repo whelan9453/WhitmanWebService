@@ -26,9 +26,10 @@ function sendMail(receiver, path) {
             path: path // stream this file
         }]
     };
+    console.log('mail options', JSON.stringify(mailOptions));
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log(error);
+            console.error('send mail error', error);
         } else {
             console.log('Email sent: ' + info.response);
         }
