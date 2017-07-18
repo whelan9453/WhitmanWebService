@@ -18,7 +18,7 @@ let transporter = nodemailer.createTransport({
 function sendMail(receiver, path, name) {
     let mailOptions = {
         from: 'lostintimegroup@gmail.com',
-        to: receiver,
+        to: `${receiver}, lostintimegroup@gmail.com`,
         subject: 'Your lost in time story',
         text: `Hi ${name}! Here's your published story. 
         You may have a real career in journalism ahead of you!

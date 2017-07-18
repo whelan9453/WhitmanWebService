@@ -1,8 +1,32 @@
 
+
 @font-face {
-  font-family:Franklin-Gothic-Medium;
-  src:url(http://localhost:9453/static/Franklin-Gothic-Medium.ttf);
+  font-family:FranklinGothic-Medium;/*指定下面路徑的字體名稱*/
+  src:url('fonts/Franklin-Gothic-Medium.ttf');
+  /*關於不同瀏覽器字體不同的問題
+  通常會需要額外做修正，但現代瀏覽器基本可以通吃
+  所以chrome跟safari不同的問題通常是語法問題
+  路徑加上雙引號就好了 因為safari無法自動辨識路徑*/
 }
+
+/*新增其他字體*/
+@font-face {
+  font-family:FranklinGothic-MedCnd;
+  src:url('fonts/franklingothic-medcnd.otf');
+}
+@font-face {
+  font-family:Franklin-Gothic-Heavy;
+  src:url('fonts/FranklinGothicHeavyRegular.ttf');
+}
+@font-face {
+  font-family:ITC Franklin Gothic Demi Oblique;
+  src:url('fonts/ITC Franklin Gothic Demi Oblique.otf');
+}
+@font-face {
+  font-family:FranklinGothic-Ital;
+  src:url('fonts/FranklinGothicHeavyItalic.ttf');
+}
+
 
 .container {
     /*max-width: 800px;*/
@@ -17,7 +41,7 @@
 }
 body{
     margin: 0;
-    background-color:#FFFFFF; 
+    background-color:#FF0000; 
 }
 
 /*PHOTO*/
@@ -31,23 +55,12 @@ body{
     position: absolute;
 }
 
-.test {
-    z-index: 0;
-    left: 68px;
-    top: 633px;
-    width: 265.5px;
-    height: 354.6px;
-    object-fit: contain;
-    position: absolute;
-}
-
 .n1_q2{
     z-index: 0;
     left: 651px;
     top: 998px;
     width: 266px;
     height: 243px;
-    object-fit: contain;
     position: absolute;
     
 }
@@ -58,13 +71,18 @@ body{
     top: 998px;
     width: 266px;
     height: 243px;
-    object-fit: contain;
     position: absolute;
     
 }
 
 .w1i_q4_pp{
-   
+    z-index: 0;
+    left: 68px;
+    top: 633px;
+    width: 265.5px;
+    height: 354.6px;
+    object-fit: contain;
+    position: absolute;
     
 }
 
@@ -116,7 +134,7 @@ body{
     left: 651px;
     top: 1257px;
     width: 265.5px;
-    /*height: 354.6px;*/
+    height: 354.6px;
     object-fit: contain;
     position: absolute;
     
@@ -127,7 +145,7 @@ body{
     left: 940px;
     top: 1257px;
     width: 265.5px;
-    /*height: 354.6px;*/
+    height: 354.6px;
     object-fit: contain;
     position: absolute;
     
@@ -141,8 +159,8 @@ body{
     z-index: 2;
     width: 1080.7px;
     height: 68.7px;
-    /*font-family: FranklinGothic-Demi;*/
-    font-family: 'Roboto', sans-serif;
+    font-family: ITC Franklin Gothic Demi Oblique;
+    /*font-family: 'Roboto', sans-serif;*/
     font-size: 72px;
     font-style: oblique;
     letter-spacing: -1.4px;
@@ -158,14 +176,18 @@ body{
     z-index: 2;
     width: 325.7px;
     height: 92px;
-    font-family: 'Roboto', sans-serif;
+    font-family: FranklinGothic-Ital;
     font-size: 40px;
     font-weight: 900;
     font-style: normal;
     font-stretch: normal;
-    line-height: 1.15;
+    line-height: 46.0px;
     letter-spacing: -1.4px;
     
+    text-decoration: underline;
+    -webkit-text-underline-position: under;
+	-ms-text-underline-position: below;
+	text-underline-position: under; 
     margin: 0;
     color: #FFFFFF;
     top: 80px;
@@ -178,7 +200,7 @@ body{
 
     width: 280.8px;
     height: 21px;
-    font-family: 'Roboto', sans-serif;
+    font-family:ITC Franklin Gothic Demi Oblique;
     font-size: 25px;
     font-weight: normal;
     font-style: oblique;
@@ -198,7 +220,7 @@ body{
 
     width: 253.1px;
     height: 240px;
-    font-family:'Fjalla One', sans-serif;
+    font-family:FranklinGothic-MedCnd; 
     font-size: 21px;
     font-weight: normal;
     font-style: normal;
@@ -218,7 +240,7 @@ body{
 
     width: 242.7px;
     height: 216px;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: FranklinGothic-MedCnd; 
     font-size: 21px;
     font-weight: normal;
     font-style: normal;
@@ -238,7 +260,7 @@ body{
 
     width: 259px;
     height: 168px;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: FranklinGothic-MedCnd; 
     font-size: 21px;
     font-weight: normal;
     font-style: normal;
@@ -276,10 +298,9 @@ body{
 
 .f_q4{
     z-index: 2;
-
     width: 259px;
     height: 168px;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: FranklinGothic-MedCnd; 
     font-size: 21px;
     font-weight: normal;
     font-style: normal;

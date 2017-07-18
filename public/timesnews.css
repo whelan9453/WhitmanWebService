@@ -54,6 +54,7 @@ img {
     top: 253.3px;
     width: 543.5px;
     height: 496.5px;
+    object-fit: contain;
     position: absolute;
 }
 .f_q4_pp{
@@ -62,6 +63,7 @@ img {
     top: 1025px;
     width: 254px;
     height: 199px;
+    object-fit: contain;
     position: absolute;
 }
 .n3_q2{
@@ -70,6 +72,7 @@ img {
     top: 1763px;
     width: 254px;
     height: 152px;
+    object-fit: contain;
     position: absolute;
 }
 .n4_q2{
@@ -78,6 +81,7 @@ img {
     top: 1763px;
     width: 254px;
     height: 152px;
+    object-fit: contain;
     position: absolute;
 }
 
@@ -87,6 +91,7 @@ img {
     top: 1025px;
     width: 543px;
     height: 350px;
+    object-fit: contain;
     position: absolute;
 }
 
