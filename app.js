@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/static', express.static('public'));
 app.get('/versionInfo', function (req, res) {
-  res.status(200).send('20170718 Revise times.pug, add new fonts, and add a mail recipient.');
+  res.status(200).send('20170718 Hide overflow.');
 });
 //Check rest key
 app.use((req, res, next) => {
