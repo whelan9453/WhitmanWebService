@@ -1,5 +1,4 @@
 
-
 @font-face {
   font-family:ImperialBT-Roman;;/*指定下面路徑的字體名稱*/
   src:url('http://localhost:9453/static/Bitstream-ImperialBTRoman.ttf');
@@ -34,11 +33,16 @@ body{
 /*PHOTO*/
 
 img {
-    position:absolute;
+    /*position:absolute;*/
     top:0;
     bottom:0;
+    left:0;
+    right:0;
     margin: auto;
-    width:100%;
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
 }
 
 .dumbo-times-template-bg{
@@ -53,9 +57,9 @@ img {
     left: 656.5px;
     top: 253.3px;
     width: 543.5px;
-    height: 496.5px;
-    object-fit: contain; 
-     overflow: hidden; 
+    height: 496.5px;    
+    text-align: center;
+    display: inline-block;
     position: absolute;
 }
 .f_q4_pp{
@@ -64,8 +68,8 @@ img {
     top: 1025px;
     width: 254px;
     height: 199px;
-    object-fit: contain;
-    overflow: hidden;
+    text-align: center;
+    display: inline-block;
     position: absolute;
 }
 .n3_q2{
@@ -74,8 +78,8 @@ img {
     top: 1763px;
     width: 254px;
     height: 152px;
-    object-fit: contain;
-    overflow: hidden;
+    text-align: center;
+    display: inline-block;
     position: absolute;
 }
 .n4_q2{
@@ -84,8 +88,8 @@ img {
     top: 1763px;
     width: 254px;
     height: 152px;
-    object-fit: contain;
-    overflow: hidden;
+    text-align: center;
+    display: inline-block;
     position: absolute;
 }
 
@@ -95,8 +99,8 @@ img {
     top: 1025px;
     width: 543px;
     height: 350px;
-    object-fit: contain;
-    overflow: hidden;
+    text-align: center;
+    display: inline-block;
     position: absolute;
 }
 
@@ -183,11 +187,18 @@ img {
     position: absolute;
 }
 
+.dynamic_h4_h1_div {
+    position: absolute;
+    top: 371px;
+    left: 366px;
+    width: 268.2px;
+    height: 594px;
+}
+
 .h4_q3{
     z-index: 1;
-    width: 268.2px;
-    height: 110px;
-   font-family: ImperialBT-Roman;
+    width: 100%;
+    font-family: ImperialBT-Roman;
     font-size: 17px;
     font-weight: normal;
     font-style: normal;
@@ -195,18 +206,14 @@ img {
     line-height: 22.0px;
     letter-spacing: -0.2px;
     color: #000000;
-
+    word-break: break-all;
 
     margin: 0;
-    left: 366px;
-    top: 371px;
-    position: absolute;
 }
 
 .h1i_q4_h1h_q3{
     z-index: 1;
-    width: 268.2px;
-    height: 484px;
+    width: 100%;
     font-family: ImperialBT-Roman;
     font-size: 17px;
     font-weight: normal;
@@ -215,11 +222,9 @@ img {
     line-height: 23.0px;
     letter-spacing: -0.2px;
     color: #000000;
+    word-break: break-all;
 
     margin: 0;
-    left: 366px;
-    top: 480px;
-    position: absolute;
 }
 
 
@@ -299,8 +304,3 @@ img {
     top: 1272px;
     position: absolute;
 }
-
-
-
-
-

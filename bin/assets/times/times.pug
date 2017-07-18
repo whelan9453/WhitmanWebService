@@ -15,11 +15,11 @@
          <header>
             <!-- This is for photo -->
             <img class="dumbo-times-template-bg" src="http://localhost:9453/static/Dumbo_Times_Template_BG.png" />
-            <div class="f_q4_pp"><img src=#{f_q4_pp} /></div>
-            <div class="n3_q2"><img src=#{n3_q2} /></div>
-            <div class="n4_q2"><img src=#{n4_q2} /></div>
-            <div class="w3h_q3"><img src=#{w3h_q3} /></div>
-            <div class="w1i_q4_w2i_q5_w3i_q5"><img src=#{w1i_q4_w2i_q5_w3i_q5} /></div>
+            <div class="f_q4_pp"><img style="position:absolute" src=#{f_q4_pp} /></div>
+            <div class="n3_q2"><img style="position:absolute" src=#{n3_q2} /></div>
+            <div class="n4_q2"><img style="position:absolute" src=#{n4_q2} /></div>
+            <div class="w3h_q3"><img style="position:absolute" src=#{w3h_q3} /></div>
+            <div class="w1i_q4_w2i_q5_w3i_q5"><img style="position:absolute" src=#{w1i_q4_w2i_q5_w3i_q5} /></div>
             //-   <img class="f_q4_pp" src="img/f_q4_pp.png" />
             //-   <img class="n3_q2" src="img/n3_q2.png" />
             //-   <img class="n4_q2" src="img/n4_q2.png" />
@@ -30,8 +30,10 @@
             <h1 class="headline_2"> #{headline_2}</h1>
             <h1 class="byline_1"> #{byline_1}</h1>
             <h1 class="byline_2"> #{byline_2}</h1>
-            <h1 class="h4_q3"> #{h4_q3}</h1>
-            <h1 class="h1i_q4_h1h_q3"> #{h1i_q4_h1h_q3} </h1>
+            <div class="dynamic_h4_h1_div">
+                <h1 class="h4_q3"> #{h4_q3}</h1>
+                <h1 class="h1i_q4_h1h_q3"> #{h1i_q4_h1h_q3} </h1>
+            </div>
             <h1 class="w2i_q4_w2h_q3"> #{w2i_q4_w2h_q3}</h1>
             <h1 class="w3i_q4"> #{w3i_q4}</h1>
             <h1 class="n1_q2"> #{n1_q2}</h1>
