@@ -85,7 +85,7 @@ const PAPER_TYPE = ['enquirer', 'times'];
 let genPaper = async function (req, res, next) {
     let token = req.headers['x-whitman-session-token'], email = req.body.email;
     let user = await UserController.checkToken(req, res, token, email);
-    let type = req.body.type, name = req.body.name || 'sir';
+    let type = req.body.type, name = req.body.name || '';
     if (!type || PAPER_TYPE.indexOf(type) === -1) {
         return res.status(400).send(new WhitmanError(WhitmanError.INVALID_PAPER_TYPE, `Invalid paper type ${type}.`));
     }
