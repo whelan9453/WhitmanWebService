@@ -19,7 +19,7 @@ function sendMail(receiver, path, name) {
     let mailOptions = {
         html: `<img src="http://whitman2017.eastus.cloudapp.azure.com:9453/static/Email_Header.png"/> <div><div>Hi ${name}!</div><div>Here\'s your published story. You may have a real career in journalism ahead of you!</div><div>Thanks for playing Lost in Time, and we hope you enjoyed it!</div><div>&nbsp;</div><div>Lost in Time Group</div></div>`,
         from: 'lostintimegroup@gmail.com',
-        to: `${receiver}, lostintimegroup@gmail.com, sitdtest@gmail.com`,
+        to: `${receiver}, lostintimegroup@gmail.com`,
         subject: 'Your Lost in Time Story',
         // text: `
         // Hi ${name}! 
