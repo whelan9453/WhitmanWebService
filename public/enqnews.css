@@ -18,7 +18,7 @@
   src:url('http://localhost:9453/static/FranklinGothicHeavyRegular.ttf');
 }
 @font-face {
-  font-family:ITC Franklin Gothic Demi Oblique;
+  font-family:ITCFranklinGothicDemi Oblique;
   src:url('http://localhost:9453/static/ITCFranklinGothicDemiOblique.otf');
 }
 @font-face {
@@ -174,7 +174,7 @@ img {
     z-index: 2;
     width: 1080.7px;
     height: 68.7px;
-    font-family: ITC Franklin Gothic Demi Oblique;
+    font-family: ITCFranklinGothicDemi Oblique;
     /*font-family: FranklinGothic-Demi;*/
     font-family: 'Roboto', sans-serif;
     font-size: 72px;
@@ -215,7 +215,7 @@ img {
 
     width: 280.8px;
     height: 21px;
-    font-family:ITC Franklin Gothic Demi Oblique;
+    font-family:ITCFranklinGothicDemi Oblique;
     font-size: 25px;
     font-weight: normal;
     font-style: oblique;
